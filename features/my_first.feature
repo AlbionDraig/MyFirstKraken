@@ -1,11 +1,18 @@
-Feature: My feature
+Feature: Registarse en angular-6-registration-login-example
 
-@user1 @mobile
-Scenario: My scenario 1
-  Given I wait
-  When I send a signal to user 2 containing "hi"
-
-@user2 @web
-Scenario: My scenario 2
-  Given I wait for a signal containing "hi"
-  When I wait
+@user1 @web
+Scenario: Rellenar formulario de registro
+  Given I navigate to page "https://angular-6-registration-login-example.stackblitz.io/register"
+  And I wait for 10 seconds
+  When I click on Run this project
+  And I wait for 5 seconds
+  And I enter my first name "<FIRSTNAME>"
+  And I wait for 5 seconds
+  And I enter my last name "<LASTNAME>"
+  And I wait for 5 seconds
+  And I enter my user "<USER>"
+  And I wait for 5 seconds
+  And I enter my password "<PASSWORD>"
+  And I wait for 5 seconds
+  Then I click on Register
+  And I validate the Registration successful
